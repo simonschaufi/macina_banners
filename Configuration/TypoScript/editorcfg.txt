@@ -9,22 +9,22 @@ plugin.tx_macinabanners_pi1.CSS_editor.ch {
 	P.example = <p>General text wrapped in &lt;P&gt;:<BR>This is text <a href="#">with a link</a> in it. In principio creavit Deus caelum et terram terra autem erat inanis et vacua et tenebrae super faciem abyssi et spiritus...</p>
 	P.exampleStop = 1
 	P.ch.links = < CSS_editor.ch.A
-	
+
 	H2 = Header 2
 	H2.selector = H2
 	H2.attribs = HEADER
 	H2.example = <H2>Header 2 example <a href="#"> with link</a></H2><p>Bodytext, Et praeessent diei ac nocti et dividerent lucem ac tenebras et vidit Deus quod esset bonum et factum est...</p>
 	H2.ch.links = < CSS_editor.ch.A
 	H2.exampleStop = 1
-	
+
 	H3 = Header 3
 	H3.selector = H3
 	H3.attribs = HEADER
 	H3.example = <h3>Header 3 example <a href="#"> with link</a></h3><p>Bodytext, Et praeessent diei ac nocti et dividerent lucem ac tenebras et vidit Deus quod esset bonum et factum est...</p>
 	H3.ch.links = < CSS_editor.ch.A
 	H3.exampleStop = 1
-	
-	
+
+
 		## LISTING:
 	modeSelector = Mode selector
 	modeSelector.selector = .tx-macinabanners-pi1-modeSelector
@@ -43,8 +43,8 @@ plugin.tx_macinabanners_pi1.CSS_editor.ch {
 	  TD.attribs = TD
 	}
 	modeSelector.ch.TD.ch.TD.ch.P < .P
-	
-	
+
+
 	browsebox = Browsing box
 	browsebox.selector = .tx-macinabanners-pi1-browsebox
 	browsebox.example = <div class="tx-macinabanners-pi1-browsebox"><p>Displaying results <span class="tx-macinabanners-pi1-browsebox-strong">1 to 3</span> out of <span class="tx-macinabanners-pi1-browsebox-strong">4</span></p><table><tr><td class="tx-macinabanners-pi1-browsebox-SCell"><p><a HREF="#">Page 1 (S)</a></p></td><td><p><a HREF="#">Page 2</a></p></td><td><p><a HREF="#">Next ></a></p></td></tr></table></div>
@@ -94,7 +94,7 @@ plugin.tx_macinabanners_pi1.CSS_editor.ch {
 			button.attribs = TEXT,background-color,width
 		}
 	}
-	
+
 	list = List display
 	list.selector = .tx-macinabanners-pi1-listrow
 	list.example = <div class="tx-macinabanners-pi1-listrow"><table><tr class="tx-macinabanners-pi1-listrow-header"><td nowrap><p>Time / Date:</p></td><td><p><a HREF="#">Title:</a></p></td></tr><tr><td valign="top"><p>25-08-02</p></td><td valign="top"><p><a HREF="#">New company name...</a></p></td></tr><tr class="tx-macinabanners-pi1-listrow-odd"><td valign="top"><p>16-08-02</p></td><td valign="top"><p><a HREF="#">Yet another headline here</a></p></td></tr><tr><td valign="top"><p>05-08-02</p></td><td valign="top"><p><a HREF="#">The third line - even row</a></p></td></tr></table></div>
@@ -116,7 +116,7 @@ plugin.tx_macinabanners_pi1.CSS_editor.ch {
 	list.ch.TD.ch.P < .P
 	list.ch.TD_header.ch.P < .P
 	list.ch.TD_odd.ch.P < .P
-	
+
 	single = Single display
 	single.selector = .tx-macinabanners-pi1-singleView
 	single.example = <div class="tx-macinabanners-pi1-singleView"><H2>Header, if any:</H2><table><tr><td nowrap valign="top" class="tx-macinabanners-pi1-singleView-HCell"><p>Date:</p></td><td valign="top"><p>13-09-02</p></td></tr><tr><td nowrap valign="top" class="tx-macinabanners-pi1-singleView-HCell"><p>Title:</p></td><td valign="top"><p><a HREF="#">New title line</a></p></td></tr><tr><td nowrap valign="top" class="tx-macinabanners-pi1-singleView-HCell"><p>Teaser text:</p></td><td valign="top"><p>Vocavitque Deus firmamentum caelum et factum est vespere et mane dies secundus dixit vero Deus congregentur.</p><p>Aquae quae sub caelo sunt in locum unum et appareat arida factumque est ita et vocavit Deus aridam terram congregationesque aquarum appellavit maria et vidit Deus quod esset bonum et ait germinet terra herbam virentem et facientem semen et lignum pomiferum faciens fructum iuxta genus suum cuius semen in semet ipso sit super terram et factum est ita et protulit terra herbam virentem et adferentem semen iuxta genus suum lignumque faciens fructum et habens unumquodque sementem secundum speciem suam et vidit Deus quod esset bonum.</p></td></tr><tr><td nowrap class="tx-macinabanners-pi1-singleView-HCell"><p>Last updated:</p></td><td valign="top"><p>25-08-2002 18:28</p></td></tr><tr><td nowrap class="tx-macinabanners-pi1-singleView-HCell"><p>Created:</p></td><td valign="top"><p>25-08-2002 18:27</p></td></tr></table><p><a href="#">Back</a></p></div>

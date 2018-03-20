@@ -3,10 +3,10 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2017-02-01T18:32:03Z" product-name="macina_banners">
 		<header/>
 		<body>
-			<trans-unit id="pi1_title" xml:space="preserve">
+			<trans-unit id="pi1_title">
 				<source>Bannermodule</source>
 			</trans-unit>
-			<trans-unit id="pi1_plus_wiz_description" xml:space="preserve">
+			<trans-unit id="pi1_plus_wiz_description">
 				<source>Adds a container to display Banners on the Website</source>
 			</trans-unit>
 		</body>

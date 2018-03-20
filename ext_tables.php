@@ -1,5 +1,5 @@
 <?php
-if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
+defined('TYPO3_MODE') or die();
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_macinabanners_banners');
 
@@ -10,6 +10,4 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['macina_banne
 // medialights: initalize 'context sensitive help' (csh)
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_macinabanners_banners','EXT:macina_banners/Resources/Private/Languages/locallang_csh_banners.xlf');
 
-// visionate removed static incluses
 #\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('macina_banners','pi1/static/','Bannermodule');
-?>

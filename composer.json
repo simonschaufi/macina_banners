@@ -1,0 +1,47 @@
+{
+	"name": "simonschaufi/macina-banners",
+	"type": "typo3-cms-extension",
+	"description": "Banner management tool with banner placement on frontend, banner rotation, scheduling and statistics.",
+	"license": [
+		"GPL-2.0"
+	],
+	"require": {
+		"typo3/cms-core": "^7.6 || ^8.0"
+	},
+	"require-dev": {
+		"namelesscoder/typo3-repository-client": "^2.0",
+		"nimut/testing-framework": "^1.0",
+		"helhum/typo3-composer-setup": "^0.5.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"JBartels\\MacinaBanners\\": "Classes"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"JBartels\\MacinaBanners\\Tests\\": "Tests"
+		}
+	},
+	"replace": {
+		"macina_banners": "self.version",
+		"typo3-ter/macina-banners": "self.version"
+	},
+	"config": {
+		"vendor-dir": ".Build/vendor"
+	},
+	"scripts": {
+		"post-autoload-dump": [
+			"mkdir -p .Build/Web/typo3conf/ext/",
+			"[ -L .Build/Web/typo3conf/ext/macina_banners ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/macina_banners"
+		],
+		"phpunit": "TYPO3_PATH_ROOT=$PWD/.Build/Web .Build/bin/phpunit --colors -c .Build/vendor/nimut/testing-framework/res/Configuration/UnitTests.xml Tests/Unit"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "macina_banners",
+			"cms-package-dir": "{$vendor-dir}/typo3/cms",
+			"web-dir": ".Build/Web"
+		}
+	}
+}

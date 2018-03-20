@@ -1,25 +1,25 @@
 plugin.tx_macinabanners_pi1 {
 	# parser (dont change this)
 	parser < tt_content.text.20.parseFunc
-	
+
 	# template for plugin
-	templateFile = EXT:macina_banners/Resources/Private/Templates/template.htm
-		
+	templateFile = EXT:macina_banners/Resources/Private/Templates/template.html
+
 	# list of page ids where the banners should be taken from ( comma seperated f.E.: 1,5,7)
-	pidList = 
-	
+	pidList =
+
 	# levels of recoursion to search for banners
 	recursive = 0
-	
+
 	# show banners with this attribute, default options are: "top, left, bottom, right", all Descriptions of Banner Categories can be used
 	placement = top
-	
+
 	#mode to show banners, options are: all, random
 	mode = all
-	
+
 	# how many banner maximum
 	results_at_a_time = 100
-	
+
 	# image preconfig
 	image {
 		file.maxW = 468

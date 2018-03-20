@@ -10,38 +10,23 @@
  * writing. "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-$EM_CONF[$_EXTKEY] = array(
+$EM_CONF[$_EXTKEY] = [
 	'title' => 'Advanced Banner Management',
-	'description' => 'Bannermanagement Tool with Bannerplacement on Frontend, Bannerrotation, sheduling, and Backendstatistics. Modified by media lights gmbh (Markus Friedrich)',
+	'description' => 'Banner management tool with banner placement on frontend, banner rotation, scheduling and statistics.',
 	'category' => 'plugin',
-	'shy' => 0,
 	'version' => '1.5.5',
-	'dependencies' => '',
-	'conflicts' => '',
-	'priority' => '',
-	'loadOrder' => '',
-	'module' => '',
 	'state' => 'stable',
 	'uploadfolder' => 1,
 	'createDirs' => '',
-	'modify_tables' => 'tt_content',
-	'clearcacheonload' => 0,
-	'lockType' => '',
 	'author' => 'Wolfgang Becker',
 	'author_email' => 'wolfgang.becker@visionate.com',
 	'author_company' => '',
-	'CGLcompliance' => '',
-	'CGLcompliance_note' => '',
-	'constraints' => array(
-		'depends' => array(
+	'constraints' => [
+        'depends' => [
 			'php' => '5.5.0-7.1.99',
 			'typo3' => '7.6.0-8.7.99',
-		),
-		'conflicts' => array(
-		),
-		'suggests' => array(
-		),
-	)
-);
-
-?>
+        ],
+        'conflicts' => [],
+        'suggests' => [],
+    ]
+];
