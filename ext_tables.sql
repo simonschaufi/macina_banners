@@ -49,8 +49,8 @@ CREATE TABLE tx_macinabanners_banners (
 	pages blob NOT NULL,
 	recursiv tinyint(4) unsigned DEFAULT '0' NOT NULL,
 	excludepages blob NOT NULL,
-	impressions tinytext NOT NULL,
-	clicks tinytext NOT NULL,
+	impressions int(11) unsigned DEFAULT '0' NOT NULL,
+	clicks int(11) unsigned DEFAULT '0' NOT NULL,
 	parameters text NOT NULL,
 
 	PRIMARY KEY (uid),

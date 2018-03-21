@@ -3,7 +3,7 @@ defined('TYPO3_MODE') or die();
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_categories',
+        'title' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_categories',
         'label' => 'description',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -18,7 +18,7 @@ return [
     'columns' => [
         'description' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_categories.description',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_categories.description',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -27,7 +27,7 @@ return [
         ],
         'icon' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_categories.icon',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_categories.icon',
             'config' => [
                 'type' => 'group',
                 'internal_type' => 'file',

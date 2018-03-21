@@ -79,19 +79,19 @@ class Pi1 extends AbstractPlugin
     {
         $this->pi_USER_INT_obj = 1; // Any link to yourself won't expect to be cached (no cHash and no_cache=1)
 
-        // forwarder
+        // click forwarder
         if ($this->piVars['banneruid']) {
             $this->conf = $conf;
             $this->pi_setPiVarDefaults();
-            $this->pi_loadLL('EXT:macina_banners/Resources/Private/Languages/locallang.xlf');
+            $this->pi_loadLL('EXT:macina_banners/Resources/Private/Language/locallang.xlf');
 
             // get link details
             $record = $this->pi_getRecord('tx_macinabanners_banners', $this->piVars['banneruid'], $checkPage = 0);
 
             if ($record != false) {
                 // update clicks
-                $GLOBALS['TYPO3_DB']->exec_UPDATEquery('tx_macinabanners_banners',
-                    'uid=' . $GLOBALS['TYPO3_DB']->fullQuoteStr($record['uid'], 'tx_macinabanners_banners'),
+                $this->getDatabaseConnection()->exec_UPDATEquery('tx_macinabanners_banners',
+                    'uid=' . $this->getDatabaseConnection()->fullQuoteStr($record['uid'], 'tx_macinabanners_banners'),
                     ['clicks' => ++$record['clicks']]);
 
                 unset($this->piVars['banneruid']);
@@ -136,17 +136,17 @@ class Pi1 extends AbstractPlugin
     /**
      * main function for output of the listview and the singleview
      *
-     * @param    string $content : main variable carriing the content
-     * @param    array $conf : config array from typoscript
+     * @param string $content : main variable carriing the content
+     * @param array $conf : config array from typoscript
      *
-     * @return    string        html content
+     * @return string html content
      */
     function listView($content, array $conf)
     {
         $this->conf = $conf; // Setting the TypoScript passed to this function in $this->conf
 
         $this->pi_setPiVarDefaults();
-        $this->pi_loadLL('EXT:macina_banners/Resources/Private/Languages/locallang.xlf');
+        $this->pi_loadLL('EXT:macina_banners/Resources/Private/Language/locallang.xlf');
 
         $this->siteRelPath = $GLOBALS['TYPO3_LOADED_EXT'][$this->extKey]['siteRelPath'];
 
@@ -156,23 +156,23 @@ class Pi1 extends AbstractPlugin
         $where .= $this->cObj->enableFields('tx_macinabanners_banners');
 
         // only banners with the correct placement (left right top bottom)
-        $allowedPlacements = GeneralUtility::trimExplode(',', $conf['placement']);
+        $allowedPlacements = $conf['placement'] ? GeneralUtility::trimExplode(',', $conf['placement']) : [];
         if (count($allowedPlacements) > 0) {
             $placementClauses = [];
             /*
                 FIX: Patch for custom categories
-                inspiration: http://www.typo3.net/forum/beitraege/thema/82762/
+                inspiration: https://www.typo3.net/forum/thematik/zeige/thema/82762/?show=1
             */
-            foreach ($allowedPlacements AS $key => $placement) {
+            foreach ($allowedPlacements as $key => $placement) {
                 if (GeneralUtility::inList('top,bottom,right,left', $placement)) {
                     $allowedPlacements[$key] = $placement;
                 } else {
                     $catWhere = 'description LIKE \'%' . $placement . '%\'';
-                    $catRS = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', 'tx_macinabanners_categories', $catWhere);
-                    $catRow = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($catRS);
+                    $catRS = $this->getDatabaseConnection()->exec_SELECTquery('*', 'tx_macinabanners_categories', $catWhere);
+                    $catRow = $this->getDatabaseConnection()->sql_fetch_assoc($catRS);
                     $allowedPlacements[$key] = 'tx_macinabanners_categories:' . $catRow['uid'];
                 }
-                $placementClauses[] = $GLOBALS['TYPO3_DB']->listQuery('placement', $allowedPlacements[$key], 'tx_macinabanners_banners');
+                $placementClauses[] = $this->getDatabaseConnection()->listQuery('placement', $allowedPlacements[$key], 'tx_macinabanners_banners');
             }
             $where .= ' AND ' . implode(' OR ', $placementClauses);
         }
@@ -180,12 +180,12 @@ class Pi1 extends AbstractPlugin
         // alle banner die die aktuelle page id nicht in excludepages stehen haben
         $where .= " AND NOT ( excludepages regexp '[[:<:]]" . $GLOBALS['TSFE']->id . "[[:>:]]' )";
 
-        // FIX pidList beachten !! Fuer Version 1.5.2
+        // pidList beachten
         if (!empty($conf['pidList'])) {
             if (!empty($conf['pidList.'])) {
                 $where .= ' AND pid IN (' . $this->cObj->cObjGetSingle($conf['pidList'], $conf['pidList.']) . ') ';
             } else {
-                $where .= ' AND pid IN (' . $GLOBALS['TYPO3_DB']->cleanIntList($conf['pidList']) . ') ';
+                $where .= ' AND pid IN (' . $this->getDatabaseConnection()->cleanIntList($conf['pidList']) . ') ';
             }
         }
 
@@ -199,8 +199,8 @@ class Pi1 extends AbstractPlugin
             $parameters = [];
 
             //get banners list according to parameters
-            $RS = $GLOBALS['TYPO3_DB']->exec_SELECTquery('uid, parameters', 'tx_macinabanners_banners', $where, '', $orderBy);
-            while ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($RS)) {
+            $RS = $this->getDatabaseConnection()->exec_SELECTquery('uid, parameters', 'tx_macinabanners_banners', $where, '', $orderBy);
+            while ($row = $this->getDatabaseConnection()->sql_fetch_assoc($RS)) {
                 if (!empty($row['parameters'])) {
                     $lines = GeneralUtility::trimExplode(chr(10), $row['parameters']);
                     foreach ($lines AS $line) {
@@ -231,13 +231,13 @@ class Pi1 extends AbstractPlugin
             }
 
             if ($ids != '') {
-                $res = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', 'tx_macinabanners_banners', 'uid IN (' . $ids . ')');
+                $res = $this->getDatabaseConnection()->exec_SELECTquery('*', 'tx_macinabanners_banners', 'uid IN (' . $ids . ')');
             } else {
                 $queryPerformed = false;
             }
         } else {
             //show all banners
-            $res = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', 'tx_macinabanners_banners', $where, '', $orderBy);
+            $res = $this->getDatabaseConnection()->exec_SELECTquery('*', 'tx_macinabanners_banners', $where, '', $orderBy);
         }
 
         // for caching
@@ -245,7 +245,7 @@ class Pi1 extends AbstractPlugin
 
         // banner aussortieren
         $bannerdata = [];
-        while ($queryPerformed && $row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)) {
+        while ($queryPerformed && $row = $this->getDatabaseConnection()->sql_fetch_assoc($res)) {
             if ($row['pages'] && $row['recursiv']) { // wenn pages nicht leer und rekursiv angehakt ist
                 // generiert zur aktuellen Seite alle Elternseiten und prueft ob in der Schnittemenge der
                 // Elternseiten mit der erlaubten Bannerseiten mindestens ein Eintrag drinnen ist.
@@ -285,16 +285,30 @@ class Pi1 extends AbstractPlugin
             shuffle($bannerdata);
         }
 
-        $this->templateCode = $this->cObj->fileResource($this->conf['templateFile']);
+        $templateFile = $this->conf['templateFile'];
+        if (version_compare(TYPO3_version, '8.7.0', '>=')) {
+            $template = GeneralUtility::getFileAbsFileName($templateFile);
+            if ($template !== '' && file_exists($template)) {
+                $this->templateCode = file_get_contents($template);
+            }
+        } else {
+            // compatibility for TYPO3 version lower than 8.7
+            $this->templateCode = $this->cObj->fileResource($templateFile);
+        }
 
         $templateMarker = '###template_banners###';
-        $template = $this->cObj->getSubpart($this->templateCode, $templateMarker);
-
-        // get row subpart
         $rowmarker = '###row###';
-        $tablerowarray = $this->cObj->getSubpart($template, $rowmarker);
 
-        $rowdata = '';
+        if (version_compare(TYPO3_version, '8.7.0', '>=')) {
+            $template = $this->templateService->getSubpart($this->templateCode, $templateMarker);
+            $tableRowArray = $this->templateService->getSubpart($template, $rowmarker);
+        } else {
+            // compatibility for TYPO3 version lower than 8.7
+            $template = $this->cObj->getSubpart($this->templateCode, $templateMarker);
+            $tableRowArray = $this->cObj->getSubpart($template, $rowmarker);
+        }
+
+        $rowData = '';
 
         // limit number of banners shown
         $qt = $conf['results_at_a_time'] < count($bannerdata) ? $conf['results_at_a_time'] : count($bannerdata);
@@ -303,8 +317,8 @@ class Pi1 extends AbstractPlugin
             $row = $bannerdata[$i];
 
             // update impressions on rendering banner
-            $GLOBALS['TYPO3_DB']->exec_UPDATEquery('tx_macinabanners_banners',
-                'uid=' . $GLOBALS['TYPO3_DB']->fullQuoteStr($row['uid'], 'tx_macinabanners_banners'),
+            $this->getDatabaseConnection()->exec_UPDATEquery('tx_macinabanners_banners',
+                'uid=' . $this->getDatabaseConnection()->fullQuoteStr($row['uid'], 'tx_macinabanners_banners'),
                 ['impressions' => ++$row['impressions']]);
 
             // assign borders to array
@@ -315,6 +329,7 @@ class Pi1 extends AbstractPlugin
                 'margin-left' => $row['border_left']
             ];
 
+            $wrappedSubpartArray = [];
             switch ($row['bannertype']) {
                 case 0:
                     /*
@@ -355,38 +370,35 @@ class Pi1 extends AbstractPlugin
                             ]);
                     }
 
-                    $banner = "\n<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0\"; width=\"" . $row['flash_width'] . "\" height=\"" . $row['flash_height'] . "\">\n";
-
+                    $banner = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0"; width="' . $row['flash_width'] . '" height="' . $row['flash_height'] . '">';
                     /**
                      * Fixed Bug #9381 Working in IE, not working in FF/Safari/Opera
                      */
-                    //$banner .= "<param name=\"movie\" value=\"uploads/tx_macinabanners/" . $row['swf'] . "\" />\n";
-                    //$banner .= "<param name=\"quality\" value=\"high\" />\n";
-                    $banner .= "<param name=\"movie\" value=\"uploads/tx_macinabanners/" . $row['swf'] . "?clickTAG=" . urlencode($clickTAG) . "&amp;target=" . $linkArray[1] . "\" />\n";
-                    $banner .= "<param name=\"quality\" value=\"autohigh\" />\n";
-                    $banner .= "<param name=\"allowScriptAccess\" value=\"sameDomain\" />\n";
-                    $banner .= "<param name=\"menu\" value=\"false\" />\n";
-                    $banner .= "<param name=\"wmode\" value=\"transparent\" />\n";
-                    //$banner .= "<param name=\"FlashVars\" value=\"clickTAG=" . urlencode($clickTAG) . "&amp;target=" . $linkArray[1] . "\" />\n";
-                    //$banner .= "<embed src=\"uploads/tx_macinabanners/" . $row['swf'] . "\" FlashVars = \"" . urlencode($clickTAG) . "&amp;target=" . $linkArray[1] . "\" quality=\"high\" wmode=\"transparent\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\"; type=\"application/x-shockwave-flash\" width=\"" . $row['flash_width'] ."\" height=\"" . $row['flash_height'] . "\"></embed>\n";
-                    $banner .= "<embed src=\"uploads/tx_macinabanners/" . $row['swf'] . "?clickTAG=" . urlencode($clickTAG) . "&amp;target=" . $linkArray[1] . "\" quality=\"autohigh\" wmode=\"transparent\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\"; type=\"application/x-shockwave-flash\" width=\"" . $row['flash_width'] . "\" height=\"" . $row['flash_height'] . "\"></embed>\n";
-                    $banner .= "</object>\n";
-
-                    #\TYPO3\CMS\Core\Utility\GeneralUtility::debug(array($clickTAG, $linkArray[1]));
+                    $banner .= '<param name="movie" value="uploads/tx_macinabanners/' . $row['swf'] . '?clickTAG=' . urlencode($clickTAG) . '&amp;target=' . $linkArray[1] . '" />';
+                    $banner .= '<param name="quality" value="autohigh" />';
+                    $banner .= '<param name="allowScriptAccess" value="sameDomain" />';
+                    $banner .= '<param name="menu" value="false" />';
+                    $banner .= '<param name="wmode" value="transparent" />';
+                    $banner .= '<embed src="uploads/tx_macinabanners/' . $row['swf'] . '?clickTAG=' . urlencode($clickTAG) . '&amp;target=' . $linkArray[1] . '" quality="autohigh" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer"; type="application/x-shockwave-flash" width="' . $row['flash_width'] . '" height="' . $row['flash_height'] . '"></embed>';
+                    $banner .= '</object>';
                     break;
-                //medialights: html mode
                 case 2:
                     $banner = $row['html'];
                     break;
             }
 
-            // funktion to attach styles to wrapping cell
-            $banner = $this->wrapwithstyles($banner, $styles);
+            // function to attach styles to wrapping cell
+            $banner = $this->wrapWithStyles($banner, $styles);
 
             // create the content by replacing the marker in the template
-            $markerArray = [];
-            $markerArray['###banner###'] = $banner;
-            $markerArray['###alttext###'] = $row['alttext'];
+            $markerArray = [
+                '###banner###' => $banner,
+                '###alttext###' => $row['alttext'],
+                '###url###' => $row['url'],
+                '###impressions###' => $row['impressions'],
+                '###clicks###' => $row['clicks'],
+                '###edit###' => $this->pi_getEditPanel($row, 'tx_macinabanners_banners'),
+            ];
 
             if ($row['bannertype'] == 0) {
                 $markerArray['###filename###'] = $row['image'];
@@ -396,18 +408,22 @@ class Pi1 extends AbstractPlugin
                 $markerArray['###filename###'] = '';
             }
 
-            $markerArray['###url###'] = $row['url'];
-            $markerArray['###impressions###'] = $row['impressions'];
-            $markerArray['###clicks###'] = $row['clicks'];
-            $markerArray['###edit###'] = $this->pi_getEditPanel($row, 'tx_macinabanners_banners');
-
-            $rowdata .= $this->cObj->substituteMarkerArrayCached($tablerowarray, $markerArray, [], $wrappedSubpartArray);
+            if (version_compare(TYPO3_version, '8.7.0', '>=')) {
+                $rowData .= $this->templateService->substituteMarkerArrayCached($tableRowArray, $markerArray, [], $wrappedSubpartArray);
+            } else {
+                // compatibility for TYPO3 version lower than 8.7
+                $rowData .= $this->cObj->substituteMarkerArrayCached($tableRowArray, $markerArray, [], $wrappedSubpartArray);
+            }
         }
-        if ($rowdata) {
+        if ($rowData) {
             $subpartArray = [];
-            $subpartArray['###row###'] = $rowdata;
-            $content = $this->cObj->substituteMarkerArrayCached($template, [], $subpartArray, []);
-
+            $subpartArray['###row###'] = $rowData;
+            if (version_compare(TYPO3_version, '8.7.0', '>=')) {
+                $content = $this->templateService->substituteMarkerArrayCached($template, [], $subpartArray, []);
+            } else {
+                // compatibility for TYPO3 version lower than 8.7
+                $content = $this->cObj->substituteMarkerArrayCached($template, [], $subpartArray, []);
+            }
             return $content;
         } else {
             return '';  // no banners
@@ -427,7 +443,7 @@ class Pi1 extends AbstractPlugin
         $this->conf = $conf;
 
         $this->pi_setPiVarDefaults();
-        $this->pi_loadLL('EXT:macina_banners/Resources/Private/Languages/locallang.xlf');
+        $this->pi_loadLL('EXT:macina_banners/Resources/Private/Language/locallang.xlf');
 
         switch ($this->internal['currentRow']['bannertype']) {
             case 0:
@@ -459,7 +475,7 @@ class Pi1 extends AbstractPlugin
                 } else {
                     $banner = $img;
                 }
-                $content = "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n<tr>\n<td nowrap valign=\"top\">" . $banner . "</td>\n</tr>\n</table>\n";
+                $content = '<table border="0" cellspacing="0" cellpadding="0"><tr><td nowrap valign="top">' . $banner . '</td></tr></table>';
                 break;
 
             case 1:
@@ -470,15 +486,15 @@ class Pi1 extends AbstractPlugin
                             $this->prefixId . '[banneruid]' => $this->internal['currentRow']['uid']
                         ]);
                 }
-                $banner = "\n<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" codebase=\"http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0\" width=\"" . $this->internal['currentRow']['flash_width'] . "\" height=\"" . $this->internal['currentRow']['flash_height'] . "\">\n";
-                $banner .= "<param name=\"movie\" value=\"uploads/tx_macinabanners/" . $this->internal['currentRow']['swf'] . "\" />\n";
-                $banner .= "<param name=\"quality\" value=\"high\" />\n";
-                $banner .= "<param name=\"allowScriptAccess\" value=\"sameDomain\" />\n";
-                $banner .= "<param name=\"menu\" value=\"false\" />\n";
-                $banner .= "<param name=\"wmode\" value=\"transparent\" />\n";
-                $banner .= "<param name=\"FlashVars\" value=\"clickTAG=" . urlencode($clickTAG) . "&amp;target=" . $linkArray[1] . "\" />\n";
-                $banner .= "<embed src=\"uploads/tx_macinabanners/" . $this->internal['currentRow']['swf'] . "\" FlashVars=\"clickTAG=" . urlencode($clickTAG) . "&amp;target=" . $linkArray[1] . "\" quality=\"high\" wmode=\"transparent\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" type=\"application/x-shockwave-flash\" width=\"" . $this->internal['currentRow']['flash_width'] . "\" height=\"" . $this->internal['currentRow']['flash_height'] . "\"></embed>\n";
-                $banner .= "</object>\n";
+                $banner = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="' . $this->internal['currentRow']['flash_width'] . '" height="' . $this->internal['currentRow']['flash_height'] . '">';
+                $banner .= '<param name="movie" value="uploads/tx_macinabanners/' . $this->internal['currentRow']['swf'] . '" />';
+                $banner .= '<param name="quality" value="high" />';
+                $banner .= '<param name="allowScriptAccess" value="sameDomain" />';
+                $banner .= '<param name="menu" value="false" />';
+                $banner .= '<param name="wmode" value="transparent" />';
+                $banner .= '<param name="FlashVars" value="clickTAG=' . urlencode($clickTAG) . '&amp;target=' . $linkArray[1] . '" />';
+                $banner .= '<embed src="uploads/tx_macinabanners/' . $this->internal['currentRow']['swf'] . '" FlashVars="clickTAG=' . urlencode($clickTAG) . '&amp;target=' . $linkArray[1] . '" quality="high" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="' . $this->internal['currentRow']['flash_width'] . '" height="' . $this->internal['currentRow']['flash_height'] . '"></embed>';
+                $banner .= '</object>';
                 $content = $banner;
                 break;
 
@@ -491,20 +507,20 @@ class Pi1 extends AbstractPlugin
     }
 
     /**
-     * wrapwithstyles wraps the banner with a table that creates the borders left right top and bottom
+     * wrapWithStyles wraps the banner with a table that creates the borders left right top and bottom
      *
-     * @param    string $string : contains the html bannercode
-     * @param    array $styles : named array with the styles padding-top, padding bottom ...
+     * @param string $string : contains the html banner code
+     * @param array $styles : named array with the styles padding-top, padding bottom ...
      *
-     * @return    string        html content
+     * @return string html content
      */
-    function wrapwithstyles($string, $styles)
+    protected function wrapWithStyles($string, $styles)
     {
         $content = '<div style="';
         foreach ($styles as $key => $value) {
             $content .= $key . ':' . $value . 'px; ';
         }
-        $content .= '">' . $string . "</div>\n";
+        $content .= '">' . $string . '</div>';
 
         return $content;
     }

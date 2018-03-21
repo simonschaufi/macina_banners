@@ -44,22 +44,22 @@ class Placement
         $macinaCfg = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['macina_banners']);
         if ($macinaCfg['activateDefaultCategories']) {
             $params['items'][] = [
-                'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.placement.I.0',
+                'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.placement.I.0',
                 'top',
                 'EXT:macina_banners/Resources/Public/Images/selicon_tx_macinabanners_banners_placement_0.gif'
             ];
             $params['items'][] = [
-                'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.placement.I.1',
+                'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.placement.I.1',
                 'right',
                 'EXT:macina_banners/Resources/Public/Images/selicon_tx_macinabanners_banners_placement_1.gif'
             ];
             $params['items'][] = [
-                'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.placement.I.2',
+                'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.placement.I.2',
                 'bottom',
                 'EXT:macina_banners/Resources/Public/Images/selicon_tx_macinabanners_banners_placement_2.gif'
             ];
             $params['items'][] = [
-                'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.placement.I.3',
+                'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.placement.I.3',
                 'left',
                 'EXT:macina_banners/Resources/Public/Images/selicon_tx_macinabanners_banners_placement_3.gif'
             ];

@@ -12,7 +12,7 @@ unset ($macinaCfg);
 
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners',
+        'title' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners',
         'label' => 'customer',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -93,6 +93,7 @@ return [
                         '--div--'
                     ]
                 ],
+                'default' => 0,
                 'exclusiveKeys' => '-1,-2',
                 'foreign_table' => 'fe_groups',
                 'foreign_table_where' => 'ORDER BY fe_groups.title',
@@ -101,7 +102,7 @@ return [
         ],
         'customer' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.customer',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.customer',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -110,14 +111,14 @@ return [
         ],
         'bannertype' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.bannertype',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.bannertype',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.bannertype.I.0', '0'],
-                    ['LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.bannertype.I.1', '1'],
-                    ['LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.bannertype.I.2', '2'],
+                    ['LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.bannertype.I.0', '0'],
+                    ['LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.bannertype.I.1', '1'],
+                    ['LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.bannertype.I.2', '2'],
                 ],
                 'size' => 1,
                 'maxitems' => 1,
@@ -164,7 +165,7 @@ return [
         ],
         'image' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.image',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.image',
             'config' => [
                 'type' => 'group',
                 'internal_type' => 'file',
@@ -179,7 +180,7 @@ return [
         ],
         'maxw' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.maxw',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.maxw',
             'config' => [
                 'type' => 'input',
                 'size' => 5,
@@ -188,7 +189,7 @@ return [
         ],
         'alttext' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.alttext',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.alttext',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -196,7 +197,7 @@ return [
         ],
         'url' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.url',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.url',
             'config' => [
                 'type' => 'input',
                 'size' => 15,
@@ -223,7 +224,7 @@ return [
         ],
         'swf' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.swf',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.swf',
             'config' => [
                 'type' => 'group',
                 'internal_type' => 'file',
@@ -234,11 +235,12 @@ return [
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
+                'default' => '',
             ]
         ],
         'flash_width' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.flash_width',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.flash_width',
             'config' => [
                 'type' => 'input',
                 'size' => 5,
@@ -247,7 +249,7 @@ return [
         ],
         'flash_height' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.flash_height',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.flash_height',
             'config' => [
                 'type' => 'input',
                 'size' => 5,
@@ -257,16 +259,17 @@ return [
         //medialights: new type html
         'html' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.html',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.html',
             'config' => [
                 'type' => 'text',
                 'cols' => 30,
                 'rows' => 5,
+                'default' => '',
             ]
         ],
         'placement' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.placement',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.placement',
             'config' => [
                 'type' => 'select',
                 'itemsProcFunc' => JBartels\MacinaBanners\BackendHelper\Placement::class . '->main',
@@ -277,7 +280,7 @@ return [
         ],
         'border_top' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.border_top',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.border_top',
             'config' => [
                 'type' => 'input',
                 'size' => 5,
@@ -288,7 +291,7 @@ return [
         ],
         'border_right' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.border_right',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.border_right',
             'config' => [
                 'type' => 'input',
                 'size' => 5,
@@ -299,7 +302,7 @@ return [
         ],
         'border_bottom' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.border_bottom',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.border_bottom',
             'config' => [
                 'type' => 'input',
                 'size' => 5,
@@ -310,7 +313,7 @@ return [
         ],
         'border_left' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.border_left',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.border_left',
             'config' => [
                 'type' => 'input',
                 'size' => 5,
@@ -321,7 +324,7 @@ return [
         ],
         'pages' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.pages',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.pages',
             'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
@@ -333,7 +336,7 @@ return [
         ],
         'recursiv' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.recursiv',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.recursiv',
             'config' => [
                 'type' => 'check',
                 'default' => '0'
@@ -341,7 +344,7 @@ return [
         ],
         'excludepages' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.excludepages',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.excludepages',
             'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
@@ -353,21 +356,21 @@ return [
         ],
         'impressions' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.impressions',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.impressions',
             'config' => [
                 'type' => 'none',
             ]
         ],
         'clicks' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.clicks',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.clicks',
             'config' => [
                 'type' => 'none',
             ]
         ],
         'parameters' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.parameters',
+            'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.parameters',
             'config' => [
                 'type' => 'text',
                 'cols' => 30,
@@ -377,13 +380,13 @@ return [
     ],
     'types' => [
         '0' => [
-            'showitem' => '--div--;LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.general,customer,l18n_parent,bannertype,sys_language_uid,parameters,--div--;LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.bannerimage,image;;3;;1-1-1, alttext,url,--div--;LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.view, placement;;;;1-1-1,pages, recursiv, excludepages,--div--;LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.visibility,hidden;;1;;1-1-1,--div--;LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.statistics,impressions, clicks'
+            'showitem' => '--div--;LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.general,customer,l18n_parent,bannertype,sys_language_uid,parameters,--div--;LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.bannerimage,image;;3;;1-1-1, alttext,url,--div--;LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.view, placement;;;;1-1-1,pages, recursiv, excludepages,--div--;LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.visibility,hidden;;1;;1-1-1,--div--;LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.statistics,impressions, clicks'
         ],
         '1' => [
-            'showitem' => '--div--;LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.general,customer,l18n_parent,bannertype,sys_language_uid,parameters,--div--;LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.flashfilm,swf;;;;1-1-1, url, flash_width, flash_height;;2,--div--;LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.view, placement;;;;1-1-1,pages, recursiv, excludepages,--div--;LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.visibility,hidden;;1;;1-1-1,--div--;LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.statistics,impressions, clicks'
+            'showitem' => '--div--;LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.general,customer,l18n_parent,bannertype,sys_language_uid,parameters,--div--;LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.flashfilm,swf;;;;1-1-1, url, flash_width, flash_height;;2,--div--;LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.view, placement;;;;1-1-1,pages, recursiv, excludepages,--div--;LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.visibility,hidden;;1;;1-1-1,--div--;LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.statistics,impressions, clicks'
         ],
         '2' => [
-            'showitem' => '--div--;LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.general,customer,l18n_parent,bannertype,sys_language_uid,parameters,--div--;LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.html,html,--div--;LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.view, placement;;;;1-1-1,pages, recursiv, excludepages,--div--;LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.visibility,hidden;;1;;1-1-1,--div--;LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tx_macinabanners_banners.statistics,impressions, clicks'
+            'showitem' => '--div--;LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.general,customer,l18n_parent,bannertype,sys_language_uid,parameters,--div--;LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.html,html,--div--;LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.view, placement;;;;1-1-1,pages, recursiv, excludepages,--div--;LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.visibility,hidden;;1;;1-1-1,--div--;LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tx_macinabanners_banners.statistics,impressions, clicks'
         ],
     ],
     // '1' => array('showitem' => 'bannertype, sys_language_uid, l18n_parent, swf;;;;1-1-1, flash_width, flash_height;;2, placement;;;;1-1-1, pages, recursiv, excludepages, customer;;;;1-1-1, impressions, hidden;;1;;1-1-1')

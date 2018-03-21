@@ -7,7 +7,7 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['macina_banne
 
 /* Add the plugins */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin([
-    'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tt_content.list_type_pi1',
+    'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tt_content.list_type_pi1',
     'macina_banners_pi1'
 ], 'list_type', 'macina_banners');
 
@@ -25,7 +25,7 @@ unset ($macinaCfg);
 $tempColumns = [
     'tx_macinabanners_placement' => [
         'exclude' => 0,
-        'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tt_content.tx_macinabanners_placement',
+        'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tt_content.tx_macinabanners_placement',
         'config' => [
             'type' => 'select',
             'itemsProcFunc' => \JBartels\MacinaBanners\BackendHelper\Placement::class . '->main',
@@ -36,24 +36,23 @@ $tempColumns = [
     ],
     'tx_macinabanners_mode' => [
         'exclude' => 0,
-        'label' => 'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tt_content.tx_macinabanners_mode',
+        'label' => 'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tt_content.tx_macinabanners_mode',
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => [
                 [
-                    'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tt_content.tx_macinabanners_mode.I.0',
+                    'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tt_content.tx_macinabanners_mode.I.0',
                     'all',
                     'EXT:macina_banners/Resources/Public/Images/selicon_tt_content_tx_macinabanners_mode_0.gif'
                 ],
                 [
-                    'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tt_content.tx_macinabanners_mode.I.1',
+                    'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tt_content.tx_macinabanners_mode.I.1',
                     'random',
                     'EXT:macina_banners/Resources/Public/Images/selicon_tt_content_tx_macinabanners_mode_1.gif'
                 ],
-                //medialights: add 'all banners randomized' mode
                 [
-                    'LLL:EXT:macina_banners/Resources/Private/Languages/locallang_db.xlf:tt_content.tx_macinabanners_mode.I.2',
+                    'LLL:EXT:macina_banners/Resources/Private/Language/locallang_db.xlf:tt_content.tx_macinabanners_mode.I.2',
                     'random_all',
                     'EXT:macina_banners/Resources/Public/Images/selicon_tt_content_tx_macinabanners_mode_2.gif'
                 ],
