@@ -10,5 +10,3 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['macina_banne
 // initalize 'context sensitive help' (csh)
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_macinabanners_banners',
     'EXT:macina_banners/Resources/Private/Language/locallang_csh_banners.xlf');
-
-#\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('macina_banners', 'pi1/static/', 'Bannermodule');
