@@ -14,7 +14,7 @@ $EM_CONF[$_EXTKEY] = [
 	'title' => 'Advanced Banner Management',
 	'description' => 'Banner management tool with banner placement on frontend, banner rotation, scheduling and statistics.',
 	'category' => 'plugin',
-	'version' => '1.5.6',
+	'version' => '1.6.0',
 	'state' => 'stable',
 	'uploadfolder' => 1,
 	'createDirs' => '',
@@ -23,7 +23,7 @@ $EM_CONF[$_EXTKEY] = [
 	'author_company' => '',
 	'constraints' => [
         'depends' => [
-			'php' => '5.5.0-7.1.99',
+			'php' => '5.6.0-7.2.99',
 			'typo3' => '7.6.0-8.7.99',
         ],
         'conflicts' => [],
