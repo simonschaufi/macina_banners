@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="es" datatype="plaintext" original="messages" date="2017-02-01T18:32:03Z">
+		<header>
+			<generator>LFEditor</generator>
+			<authorName>Simon Schaufelberger</authorName>
+		</header>
+		<body>
+			<trans-unit id="tt_content.tx_macinabanners_donate" approved="yes">
+				<source>Donate</source>
+				<target>Donar</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_macinabanners_mode" approved="yes">
+				<source>Mode</source>
+				<target>Modo</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_macinabanners_placement" approved="yes">
+				<source>Placement</source>
+				<target>Colocación</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_macinabanners_placement.I.0" approved="yes">
+				<source>top</source>
+				<target>arriba</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_macinabanners_placement.I.1" approved="yes">
+				<source>right</source>
+				<target>derecho</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_macinabanners_placement.I.2" approved="yes">
+				<source>bottom</source>
+				<target>debajo</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_macinabanners_placement.I.3" approved="yes">
+				<source>left</source>
+				<target>izquierda</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners" approved="yes">
+				<source>Banner</source>
+				<target>Bandera</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.bannertype.I.0" approved="yes">
+				<source>image</source>
+				<target>Imagen</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

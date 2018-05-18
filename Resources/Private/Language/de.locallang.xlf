@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2017-02-01T18:32:03Z" product-name="macina_banners">
-		<header/>
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-02-01T18:32:03Z">
+		<header>
+			<authorName>Simon Schaufelberger</authorName>
+			<generator>LFEditor</generator>
+		</header>
 		<body>
-			<trans-unit id="pi1_title">
-				<source>Bannermodule</source>
+			<trans-unit id="pi1_plus_wiz_description" approved="yes">
+				<source>Adds a container to display banners on the website</source>
+				<target>Fügt einen Container zum anzeigen von Bannern ein.</target>
+			</trans-unit>
+			<trans-unit id="pi1_title" approved="yes">
+				<source>Banner module</source>
 				<target>Bannermodul</target>
 			</trans-unit>
-			<trans-unit id="pi1_plus_wiz_description" >
-				<source>Adds a container to display Banners on the Website</source>
-				<target>Fügt einen Container zum anzeigen von Bannern ein.</target>
+			<trans-unit id="tx_macinabanners_donate.donate_button_text" approved="yes">
+				<source>Donate with PayPal</source>
+				<target>Spende mit PayPal</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_donate.headline" approved="yes">
+				<source>Support this extension!</source>
+				<target>Unterstützen Sie diese Extension!</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_donate.text" approved="yes">
+				<source>Do you think that macina_banners has a great value for you or your company? Please donate!</source>
+				<target>Finden Sie, dass macina_banners einen großen Mehrwert für Sie oder Ihr Unternehmen hat? Bitte spenden Sie!</target>
 			</trans-unit>
 		</body>
 	</file>

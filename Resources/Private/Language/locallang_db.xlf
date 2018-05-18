@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2017-02-01T18:32:03Z" product-name="macina_banners">
-		<header/>
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-02-01T18:32:03Z">
+		<header>
+			<generator>LFEditor</generator>
+			<authorName>Simon Schaufelberger</authorName>
+		</header>
 		<body>
+			<trans-unit id="tt_content.list_type_pi1">
+				<source>Banner module</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_macinabanners_donate">
+				<source>Donate</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_macinabanners_mode">
+				<source>Mode</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_macinabanners_mode.I.0">
+				<source>show all attached banner</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_macinabanners_mode.I.1">
+				<source>show random from attached banners</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_macinabanners_mode.I.2">
+				<source>show all banners randomized</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_macinabanners_placement">
+				<source>Placement</source>
+			</trans-unit>
 			<trans-unit id="tt_content.tx_macinabanners_placement.I.0">
 				<source>top</source>
 			</trans-unit>
@@ -15,26 +39,17 @@
 			<trans-unit id="tt_content.tx_macinabanners_placement.I.3">
 				<source>left</source>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_macinabanners_placement">
-				<source>Placement</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_macinabanners_mode.I.0">
-				<source>show all attached banner</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_macinabanners_mode.I.1">
-				<source>show random from attached banners</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_macinabanners_mode.I.2">
-				<source>show all banners randomized</source>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_macinabanners_mode">
-				<source>Mode</source>
-			</trans-unit>
 			<trans-unit id="tx_macinabanners_banners">
 				<source>Banner</source>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.customer">
-				<source>Customer</source>
+			<trans-unit id="tx_macinabanners_banners.alttext">
+				<source>Image Text</source>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.bannerimage">
+				<source>BannerImage</source>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.bannertype">
+				<source>Bannertype</source>
 			</trans-unit>
 			<trans-unit id="tx_macinabanners_banners.bannertype.I.0">
 				<source>image</source>
@@ -45,29 +60,59 @@
 			<trans-unit id="tx_macinabanners_banners.bannertype.I.2">
 				<source>html</source>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.bannertype">
-				<source>Bannertype</source>
+			<trans-unit id="tx_macinabanners_banners.border_bottom">
+				<source>bottom Border</source>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.image">
-				<source>Bannerimage</source>
+			<trans-unit id="tx_macinabanners_banners.border_left">
+				<source>left Border</source>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.maxw">
-				<source>Maximum width</source>
+			<trans-unit id="tx_macinabanners_banners.border_right">
+				<source>right Border</source>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.alttext">
-				<source>Image Text</source>
+			<trans-unit id="tx_macinabanners_banners.border_top">
+				<source>top Border</source>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.url">
-				<source>Link</source>
+			<trans-unit id="tx_macinabanners_banners.clicks">
+				<source>Clickcount</source>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.swf">
-				<source>flashbanner</source>
+			<trans-unit id="tx_macinabanners_banners.customer">
+				<source>Customer</source>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.excludepages">
+				<source>DONT show Banner on THIS Pages</source>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.flash_height">
+				<source>height of flashmovie</source>
 			</trans-unit>
 			<trans-unit id="tx_macinabanners_banners.flash_width">
 				<source>width of flashmovie</source>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.flash_height">
-				<source>height of flashmovie</source>
+			<trans-unit id="tx_macinabanners_banners.flashfilm">
+				<source>Flashfile</source>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.general">
+				<source>General</source>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.html">
+				<source>HTML</source>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.image">
+				<source>Bannerimage</source>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.impressions">
+				<source>Impressions</source>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.maxw">
+				<source>Maximum width</source>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.pages">
+				<source>Show Banner on this Pages ONLY</source>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.parameters">
+				<source>Parameters</source>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.placement">
+				<source>Placement</source>
 			</trans-unit>
 			<trans-unit id="tx_macinabanners_banners.placement.I.0">
 				<source>top</source>
@@ -81,59 +126,23 @@
 			<trans-unit id="tx_macinabanners_banners.placement.I.3">
 				<source>left</source>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.placement">
-				<source>Placement</source>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.border_top">
-				<source>top Border</source>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.border_right">
-				<source>right Border</source>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.border_bottom">
-				<source>bottom Border</source>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.border_left">
-				<source>left Border</source>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.pages">
-				<source>Show Banner on this Pages ONLY</source>
-			</trans-unit>
 			<trans-unit id="tx_macinabanners_banners.recursiv">
 				<source>including Subpages</source>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.excludepages">
-				<source>DONT show Banner on THIS Pages</source>
+			<trans-unit id="tx_macinabanners_banners.statistics">
+				<source>Statistics</source>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.impressions">
-				<source>Impressions</source>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.clicks">
-				<source>Clickcount</source>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.parameters">
-				<source>Parameters</source>
-			</trans-unit>
-			<trans-unit id="tt_content.list_type_pi1">
-				<source>Bannermodule</source>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.sys_language_uid">
-				<source>Banner language</source>
+			<trans-unit id="tx_macinabanners_banners.swf">
+				<source>flashbanner</source>
 			</trans-unit>
 			<trans-unit id="tx_macinabanners_banners.sys_language_independent">
 				<source>Language independent (above seleceted language is ignored!)</source>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.general">
-				<source>General</source>
+			<trans-unit id="tx_macinabanners_banners.sys_language_uid">
+				<source>Banner language</source>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.bannerimage">
-				<source>BannerImage</source>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.flashfilm">
-				<source>Flashfile</source>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.html">
-				<source>HTML</source>
+			<trans-unit id="tx_macinabanners_banners.url">
+				<source>Link</source>
 			</trans-unit>
 			<trans-unit id="tx_macinabanners_banners.view">
 				<source>View</source>
@@ -141,10 +150,6 @@
 			<trans-unit id="tx_macinabanners_banners.visibility">
 				<source>Visibility</source>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.statistics">
-				<source>Statistics</source>
-			</trans-unit>
-
 			<trans-unit id="tx_macinabanners_categories">
 				<source>Banner Category</source>
 			</trans-unit>
@@ -153,6 +158,9 @@
 			</trans-unit>
 			<trans-unit id="tx_macinabanners_categories.icon">
 				<source>Icon</source>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_donate">
+				<source>Donate</source>
 			</trans-unit>
 		</body>
 	</file>

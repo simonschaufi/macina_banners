@@ -1,208 +1,218 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2017-02-01T18:32:03Z" product-name="macina_banners">
-		<header/>
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-02-01T18:32:03Z">
+		<header>
+			<generator>LFEditor</generator>
+			<authorName>Simon Schaufelberger</authorName>
+		</header>
 		<body>
-			<trans-unit id="tt_content.tx_macinabanners_placement.I.0">
-				<source>top</source>
-				<target>oben</target>
+			<trans-unit id="tt_content.list_type_pi1" approved="yes">
+				<source>Banner module</source>
+				<target>Bannermodul</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_macinabanners_placement.I.1">
-				<source>right</source>
-				<target>rechts</target>
+			<trans-unit id="tt_content.tx_macinabanners_donate" approved="yes">
+				<source>Donate</source>
+				<target>Spenden</target>
 			</trans-unit>
-			<trans-unit id="tt_content.tx_macinabanners_placement.I.2">
-				<source>bottom</source>
-				<target>unten</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_macinabanners_placement.I.3">
-				<source>left</source>
-				<target>links</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_macinabanners_placement">
-				<source>Placement</source>
-				<target>Positionierung</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_macinabanners_mode.I.0">
-				<source>show all attached banner</source>
-				<target>alle dieser Seite angefügten Banner zeigen</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_macinabanners_mode.I.1">
-				<source>show random from attached banners</source>
-				<target>zufällig einen der angefügten Banner zeigen</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_macinabanners_mode.I.2">
-				<source>show all banners randomized</source>
-				<target>alle Banner in zufälliger Reihenfolge zeigen</target>
-			</trans-unit>
-			<trans-unit id="tt_content.tx_macinabanners_mode">
+			<trans-unit id="tt_content.tx_macinabanners_mode" approved="yes">
 				<source>Mode</source>
 				<target>Anzeigemodus</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners">
-				<source>Banner</source>
-				<target>Banner</target>
+			<trans-unit id="tt_content.tx_macinabanners_mode.I.0" approved="yes">
+				<source>show all attached banner</source>
+				<target>alle dieser Seite angefügten Banner zeigen</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.customer">
-				<source>Customer</source>
-				<target>Beschreibung</target>
+			<trans-unit id="tt_content.tx_macinabanners_mode.I.1" approved="yes">
+				<source>show random from attached banners</source>
+				<target>zufällig einen der angefügten Banner zeigen</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.bannertype.I.0">
-				<source>image</source>
-				<target>Bild</target>
+			<trans-unit id="tt_content.tx_macinabanners_mode.I.2" approved="yes">
+				<source>show all banners randomized</source>
+				<target>alle Banner in zufälliger Reihenfolge zeigen</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.bannertype.I.1">
-				<source>flash (.swf)</source>
-				<target>Flash (.swf)</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.bannertype.I.2">
-				<source>html</source>
-				<target>Html</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.bannertype">
-				<source>Bannertype</source>
-				<target>Bannertyp</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.image">
-				<source>Bannerimage</source>
-				<target>Bannerbilddatei</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.maxw">
-				<source>Maximum width</source>
-				<target>Maximale Breite</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.alttext">
-				<source>Image Text</source>
-				<target>Bildtext</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.url">
-				<source>Link</source>
-				<target>Link</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.swf">
-				<source>flashbanner</source>
-				<target>Flashbanner</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.flash_width">
-				<source>width of flashmovie</source>
-				<target>Breite des Flashfilms</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.flash_height">
-				<source>height of flashmovie</source>
-				<target>Höhe des Flashfilms</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.placement.I.0">
-				<source>top</source>
-				<target>oben</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.placement.I.1">
-				<source>right</source>
-				<target>rechts</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.placement.I.2">
-				<source>bottom</source>
-				<target>unten</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.placement.I.3">
-				<source>left</source>
-				<target>links</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.placement">
+			<trans-unit id="tt_content.tx_macinabanners_placement" approved="yes">
 				<source>Placement</source>
 				<target>Positionierung</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.border_top">
-				<source>top Border</source>
-				<target>oberer Rand</target>
+			<trans-unit id="tt_content.tx_macinabanners_placement.I.0" approved="yes">
+				<source>top</source>
+				<target>oben</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.border_right">
-				<source>right Border</source>
-				<target>rechter Rand</target>
+			<trans-unit id="tt_content.tx_macinabanners_placement.I.1" approved="yes">
+				<source>right</source>
+				<target>rechts</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.border_bottom">
-				<source>bottom Border</source>
-				<target>unterer Rand</target>
+			<trans-unit id="tt_content.tx_macinabanners_placement.I.2" approved="yes">
+				<source>bottom</source>
+				<target>unten</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.border_left">
-				<source>left Border</source>
-				<target>linker Rand</target>
+			<trans-unit id="tt_content.tx_macinabanners_placement.I.3" approved="yes">
+				<source>left</source>
+				<target>links</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.pages">
-				<source>Show Banner on this Pages ONLY</source>
-				<target>zeige Banner NUR auf diesen Seiten</target>
+			<trans-unit id="tx_macinabanners_banners" approved="yes">
+				<source>Banner</source>
+				<target>Banner</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.recursiv">
-				<source>including Subpages</source>
-				<target>inclusive Unterseiten</target>
+			<trans-unit id="tx_macinabanners_banners.alttext" approved="yes">
+				<source>Image Text</source>
+				<target>Bildtext</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.excludepages">
-				<source>DONT show Banner on THIS Pages</source>
-				<target>zeige Banner NICHT auf diesen Seiten</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.impressions">
-				<source>Impressions</source>
-				<target>Darstellungen</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.clicks">
-				<source>Clickcount</source>
-				<target>Anzahl von Clicks</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.parameters">
-				<source>Parameters</source>
-				<target>Parameter</target>
-			</trans-unit>
-			<trans-unit id="tt_content.list_type_pi1">
-				<source>Bannermodule</source>
-				<target>Bannermodul</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.sys_language_uid">
-				<source>Banner language</source>
-				<target>Sprache des Banners</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.sys_language_independent">
-				<source>Language independent (above seleceted language is ignored!)</source>
-				<target>Sprachunabhängig (obige Auswahl wird ignoriert!)</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.general">
-				<source>General</source>
-				<target>Grundeinstellungen</target>
-			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.bannerimage">
+			<trans-unit id="tx_macinabanners_banners.bannerimage" approved="yes">
 				<source>BannerImage</source>
 				<target>Bannergrafik</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.flashfilm">
+			<trans-unit id="tx_macinabanners_banners.bannertype" approved="yes">
+				<source>Bannertype</source>
+				<target>Bannertyp</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.bannertype.I.0" approved="yes">
+				<source>image</source>
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.bannertype.I.1" approved="yes">
+				<source>flash (.swf)</source>
+				<target>Flash (.swf)</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.bannertype.I.2" approved="yes">
+				<source>html</source>
+				<target>HTML</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.border_bottom" approved="yes">
+				<source>bottom Border</source>
+				<target>unterer Rand</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.border_left" approved="yes">
+				<source>left Border</source>
+				<target>linker Rand</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.border_right" approved="yes">
+				<source>right Border</source>
+				<target>rechter Rand</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.border_top" approved="yes">
+				<source>top Border</source>
+				<target>oberer Rand</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.clicks" approved="yes">
+				<source>Clickcount</source>
+				<target>Anzahl von Clicks</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.customer" approved="yes">
+				<source>Customer</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.excludepages" approved="yes">
+				<source>DONT show Banner on THIS Pages</source>
+				<target>zeige Banner NICHT auf diesen Seiten</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.flash_height" approved="yes">
+				<source>height of flashmovie</source>
+				<target>Höhe des Flashfilms</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.flash_width" approved="yes">
+				<source>width of flashmovie</source>
+				<target>Breite des Flashfilms</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.flashfilm" approved="yes">
 				<source>Flashfile</source>
 				<target>Flashfilm</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.html">
+			<trans-unit id="tx_macinabanners_banners.general" approved="yes">
+				<source>General</source>
+				<target>Grundeinstellungen</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.html" approved="yes">
 				<source>HTML</source>
 				<target>HTML</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.view">
-				<source>View</source>
-				<target>Anzeige</target>
+			<trans-unit id="tx_macinabanners_banners.image" approved="yes">
+				<source>Bannerimage</source>
+				<target>Bannerbilddatei</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.visibility">
-				<source>Visibility</source>
-				<target>Sichtbarkeit</target>
+			<trans-unit id="tx_macinabanners_banners.impressions" approved="yes">
+				<source>Impressions</source>
+				<target>Darstellungen</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_banners.statistics">
+			<trans-unit id="tx_macinabanners_banners.maxw" approved="yes">
+				<source>Maximum width</source>
+				<target>Maximale Breite</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.pages" approved="yes">
+				<source>Show Banner on this Pages ONLY</source>
+				<target>zeige Banner NUR auf diesen Seiten</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.parameters" approved="yes">
+				<source>Parameters</source>
+				<target>Parameter</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.placement" approved="yes">
+				<source>Placement</source>
+				<target>Positionierung</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.placement.I.0" approved="yes">
+				<source>top</source>
+				<target>oben</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.placement.I.1" approved="yes">
+				<source>right</source>
+				<target>rechts</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.placement.I.2" approved="yes">
+				<source>bottom</source>
+				<target>unten</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.placement.I.3" approved="yes">
+				<source>left</source>
+				<target>links</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.recursiv" approved="yes">
+				<source>including Subpages</source>
+				<target>inclusive Unterseiten</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.statistics" approved="yes">
 				<source>Statistics</source>
 				<target>Statistik</target>
 			</trans-unit>
-
-			<trans-unit id="tx_macinabanners_categories">
+			<trans-unit id="tx_macinabanners_banners.swf" approved="yes">
+				<source>flashbanner</source>
+				<target>Flashbanner</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.sys_language_independent" approved="yes">
+				<source>Language independent (above seleceted language is ignored!)</source>
+				<target>Sprachunabhängig (obige Auswahl wird ignoriert!)</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.sys_language_uid" approved="yes">
+				<source>Banner language</source>
+				<target>Sprache des Banners</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.url" approved="yes">
+				<source>Link</source>
+				<target>Link</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.view" approved="yes">
+				<source>View</source>
+				<target>Anzeige</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_banners.visibility" approved="yes">
+				<source>Visibility</source>
+				<target>Sichtbarkeit</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_categories" approved="yes">
 				<source>Banner Category</source>
 				<target>Banner Kategorie</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_categories.description">
+			<trans-unit id="tx_macinabanners_categories.description" approved="yes">
 				<source>Description</source>
 				<target>Beschreibung</target>
 			</trans-unit>
-			<trans-unit id="tx_macinabanners_categories.icon">
+			<trans-unit id="tx_macinabanners_categories.icon" approved="yes">
 				<source>Icon</source>
 				<target>Icon</target>
+			</trans-unit>
+			<trans-unit id="tx_macinabanners_donate" approved="yes">
+				<source>Donate</source>
+				<target>Spenden</target>
 			</trans-unit>
 		</body>
 	</file>

@@ -12,7 +12,7 @@ plugin.tx_macinabanners_pi1 {
 	# show banners with the placement only or all if empty. Options are: "top, left, bottom, right".
 	placement =
 
-	# mode to show banners, options are: all, random
+	# mode to show banners, options are: all, random, random_all
 	mode = all
 
 	# how many banner maximum

@@ -26,7 +26,7 @@
 namespace JBartels\MacinaBanners\Plugin;
 
 /**
- * Plugin 'Bannermodule' for the 'macina_banners' extension.
+ * Plugin 'Banner module' for the 'macina_banners' extension.
  *
  * @author Wolfgang Becker <wb@macina.com>
  */
