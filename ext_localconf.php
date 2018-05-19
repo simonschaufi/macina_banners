@@ -12,6 +12,18 @@ defined('TYPO3_MODE') or die();
 	tt_content.shortcut.20.0.conf.tx_macinabanners_banners.CMD = singleView
 ', 43);
 
+$icons = [
+    'ext-macinabanners-wizard-icon' => 'Extension.svg',
+];
+$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+foreach ($icons as $identifier => $path) {
+    $iconRegistry->registerIcon(
+        $identifier,
+        \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        ['source' => 'EXT:macina_banners/Resources/Public/Icons/' . $path]
+    );
+}
+
 // add New CE-wizard elements
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
     '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:macina_banners/Configuration/PageTS/NewContentElementWizard.typoscript">'
