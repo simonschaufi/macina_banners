@@ -3,7 +3,7 @@ defined('TYPO3_MODE') or die();
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig('options.saveDocNew.tx_macinabanners_banners=1');
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPItoST43('macina_banners', 'Classes/Plugin/Pi1.php', '_pi1', 'list_type', 1);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPItoST43('macina_banners', '', '_pi1', 'list_type', 1);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript('macina_banners', 'setup',
     'plugin.tx_macinabanners_pi1.userFunc = JBartels\\MacinaBanners\\Plugin\\Pi1->main');
 
