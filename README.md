@@ -6,7 +6,7 @@
 [![TYPO3](https://img.shields.io/badge/TYPO3-7.6.0-orange.svg)](https://typo3.org/)
 [![TYPO3](https://img.shields.io/badge/TYPO3-8.7.0-orange.svg)](https://typo3.org/)
 
-Bannermanagement tool with banner placement on Frontend, banner rotation, scheduling, and Backend statistics.
+Advanced banner management tool with banner placement on frontend, banner rotation, scheduling and backend statistics.
 
 ## Installation
 
