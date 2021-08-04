@@ -1,4 +1,5 @@
 <?php
+
 /***************************************************************
  *  Copyright notice
  *
@@ -25,23 +26,11 @@
 
 namespace JBartels\MacinaBanners\Plugin;
 
-/**
- * Plugin 'Banner module' for the 'macina_banners' extension.
- *
- * @author Wolfgang Becker <wb@macina.com>
- */
-
+use TYPO3\CMS\Core\Database\DatabaseConnection;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\HttpUtility;
 use TYPO3\CMS\Frontend\Plugin\AbstractPlugin;
 
-/**
- * Class for creating a banner extension
- *
- * @author    Wolfgang <wb@macina.com>
- * @package TYPO3
- * @subpackage tx_macinabanners
- */
 class Pi1 extends AbstractPlugin
 {
     public $prefixId = 'tx_macinabanners_pi1';
@@ -68,12 +57,9 @@ class Pi1 extends AbstractPlugin
     protected $templateCode;
 
     /**
-     * main function invoked by index.php
-     *
-     * @param    string $content : main variable carriing the content
-     * @param    array $conf : config array from typoscript
-     *
-     * @return    string        html content
+     * @param $content
+     * @param array $conf
+     * @return string
      */
     function main($content, $conf)
     {
@@ -105,7 +91,6 @@ class Pi1 extends AbstractPlugin
                 $this->internal['currentTable'] = $t;
                 $this->internal['currentRow'] = $this->cObj->data;
                 return $this->singleView($content, $conf);
-                break;
             default:
                 if (strstr($this->cObj->currentRecord, 'tt_content')) {
                     $conf['pidList'] = $this->cObj->data['pages'];
@@ -114,7 +99,6 @@ class Pi1 extends AbstractPlugin
                     $conf['mode'] = $this->cObj->data['tx_macinabanners_mode'];
                 }
                 /* medialights: didn't work with deactivated caching in 'ext_localconf.php -> addPItoST43'*/
-                //PRS+ 12.08.2005
                 if ($conf['mode'] == 'random' || $conf['mode'] == 'random_all' || $conf['enableParameterRestriction'] == 1) {
                     $substKey = 'INT_SCRIPT.' . $GLOBALS['TSFE']->uniqueHash();
                     $link = '<!--' . $substKey . '-->';
@@ -126,10 +110,9 @@ class Pi1 extends AbstractPlugin
                     ];
 
                     return $link;
-                } else {
-                    return $this->listView($content, $conf);
                 }
-                //PRS- 12.08.2005
+
+                return $this->listView($content, $conf);
         }
     }
 
@@ -191,14 +174,13 @@ class Pi1 extends AbstractPlugin
 
         $orderBy = 'sorting';
 
-        //medialights
         $queryPerformed = true;
-        //Prepare and execute listing query
+        // Prepare and execute listing query
         if (isset($conf['enableParameterRestriction']) && !empty($conf['enableParameterRestriction'])) {
-            //show only banners that match to the selected options
+            // show only banners that match to the selected options
             $parameters = [];
 
-            //get banners list according to parameters
+            // get banners list according to parameters
             $RS = $this->getDatabaseConnection()->exec_SELECTquery('uid, parameters', 'tx_macinabanners_banners', $where, '', $orderBy);
             while ($row = $this->getDatabaseConnection()->sql_fetch_assoc($RS)) {
                 if (!empty($row['parameters'])) {
@@ -317,9 +299,11 @@ class Pi1 extends AbstractPlugin
             $row = $bannerdata[$i];
 
             // update impressions on rendering banner
-            $this->getDatabaseConnection()->exec_UPDATEquery('tx_macinabanners_banners',
+            $this->getDatabaseConnection()->exec_UPDATEquery(
+                'tx_macinabanners_banners',
                 'uid=' . $this->getDatabaseConnection()->fullQuoteStr($row['uid'], 'tx_macinabanners_banners'),
-                ['impressions' => ++$row['impressions']]);
+                ['impressions' => ++$row['impressions']]
+            );
 
             // assign borders to array
             $styles = [
@@ -356,7 +340,7 @@ class Pi1 extends AbstractPlugin
                                 'no_cache' => 1,
                                 $this->prefixId . '[banneruid]' => $row['uid']
                             ]));
-                        $banner = join($wrappedSubpartArray['###bannerlink###'], $img);
+                        $banner = implode($img, $wrappedSubpartArray['###bannerlink###']);
                     } else {
                         $banner = $img;
                     }
@@ -425,9 +409,9 @@ class Pi1 extends AbstractPlugin
                 $content = $this->cObj->substituteMarkerArrayCached($template, [], $subpartArray, []);
             }
             return $content;
-        } else {
-            return '';  // no banners
         }
+
+        return '';
     }
 
     /**
@@ -471,7 +455,7 @@ class Pi1 extends AbstractPlugin
                             'no_cache' => 1,
                             $this->prefixId . '[banneruid]' => $this->internal['currentRow']['uid']
                         ]));
-                    $banner = join($wrappedSubpartArray['###bannerlink###'], $img);
+                    $banner = implode($img, $wrappedSubpartArray['###bannerlink###']);
                 } else {
                     $banner = $img;
                 }
@@ -531,7 +515,7 @@ class Pi1 extends AbstractPlugin
      */
     protected function replace_field_image(&$item, $key)
     {
-        if ($item == 'field_image') {
+        if ($item === 'field_image') {
             $item = $this->imageName;
         }
     }
@@ -542,13 +526,13 @@ class Pi1 extends AbstractPlugin
      */
     protected function replace_field_alttext(&$item, $key)
     {
-        if ($item == 'field_alttext') {
+        if ($item === 'field_alttext') {
             $item = $this->altText;
         }
     }
 
     /**
-     * @return \TYPO3\CMS\Core\Database\DatabaseConnection
+     * @return DatabaseConnection
      */
     protected function getDatabaseConnection()
     {
