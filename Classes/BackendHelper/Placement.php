@@ -27,20 +27,16 @@
 namespace JBartels\MacinaBanners\BackendHelper;
 
 /**
- * Class/Function which manipulates the item-array for table/field tt_content_tx_macinabanners_placement.
- *
- * @author    Markus Friedrich <markus.friedrich@media-lights.de>
+ * Class which manipulates the item-array for table/field tt_content_tx_macinabanners_placement.
  */
 class Placement
 {
-
     /**
      * @param $params
      * @param $pObj
      */
     function main(&$params, &$pObj)
     {
-        //medialights: include default categories if demanded
         $macinaCfg = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['macina_banners']);
         if ($macinaCfg['activateDefaultCategories']) {
             $params['items'][] = [
@@ -64,13 +60,13 @@ class Placement
                 'EXT:macina_banners/Resources/Public/Images/selicon_tx_macinabanners_banners_placement_3.gif'
             ];
         } else {
-            //get upload folder
+            // get upload folder
             $uploadFolder = $GLOBALS['TCA']['tx_macinabanners_categories']['columns']['icon']['config']['uploadfolder'];
 
-            //get items from database and add them to the list
+            // get items from database and add them to the list
             $rows = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', 'tx_macinabanners_categories', '');
             while ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($rows)) {
-                //check if there is an icon
+                // check if there is an icon
                 if (!empty($row['icon']) && file_exists(PATH_site . $uploadFolder . '/' . $row['icon'])) {
                     $icon = '../' . $uploadFolder . '/' . $row['icon'];
                 } else {
