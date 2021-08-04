@@ -19,11 +19,11 @@ $EM_CONF[$_EXTKEY] = [
 	'uploadfolder' => 1,
 	'createDirs' => '',
     'author' => 'Simon Schaufelberger',
-    'author_email' => 'simonschaufi+typo3@gmail.com',
+    'author_email' => 'simonschaufi+macinabanners@gmail.com',
 	'author_company' => '',
 	'constraints' => [
         'depends' => [
-			'php' => '5.6.0-7.2.99',
+			'php' => '5.6.0-7.4.99',
 			'typo3' => '7.6.0-8.7.99',
         ],
         'conflicts' => [],
